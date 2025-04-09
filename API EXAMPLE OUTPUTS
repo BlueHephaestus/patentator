@@ -1,0 +1,2086 @@
+{
+   "search_metadata":{
+      "id":"67ec5ee159e4f8404456b398",
+      "status":"Success",
+      "json_endpoint":"https://serpapi.com/searches/b6942e0bf9de3f17/67ec5ee159e4f8404456b398.json",
+      "created_at":"2025-04-01 21:47:13 UTC",
+      "processed_at":"2025-04-01 21:47:13 UTC",
+      "google_patents_details_url":"https://patents.google.com/patent/US9687142B1/en",
+      "raw_html_file":"https://serpapi.com/searches/b6942e0bf9de3f17/67ec5ee159e4f8404456b398.html",
+      "total_time_taken":1.27
+   },
+   "search_parameters":{
+      "engine":"google_patents_details",
+      "patent_id":"patent/US9687142B1/en"
+   },
+   "title":"Method of stabilizing an endoscopic assembly",
+   "type":"patent",
+   "pdf":"https://patentimages.storage.googleapis.com/62/bc/2c/c8273fbfab51f8/US9687142.pdf",
+   "publication_number":"US9687142B1",
+   "country":"United States",
+   "prior_art_keywords":[
+      "sheath",
+      "camera",
+      "distal end",
+      "cannula",
+      "endoscope"
+   ],
+   "prior_art_date":"2016-05-24",
+   "application_number":"US15/255,917",
+   "inventors":[
+      {
+         "name":"Daniel Lieberman",
+         "link":"https://patents.google.com/?inventor=Daniel+Lieberman",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=Daniel+Lieberman"
+      },
+      {
+         "name":"Yani Deros",
+         "link":"https://patents.google.com/?inventor=Yani+Deros",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=Yani+Deros"
+      },
+      {
+         "name":"Matthew James Ibarra",
+         "link":"https://patents.google.com/?inventor=Matthew+James+Ibarra",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=Matthew+James+Ibarra"
+      },
+      {
+         "name":"Kirsten Rutherford",
+         "link":"https://patents.google.com/?inventor=Kirsten+Rutherford",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=Kirsten+Rutherford"
+      },
+      {
+         "name":"John B. Kinnard",
+         "link":"https://patents.google.com/?inventor=John+B.+Kinnard",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=John+B.+Kinnard"
+      },
+      {
+         "name":"Craig C. Ovans",
+         "link":"https://patents.google.com/?inventor=Craig+C.+Ovans",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents&inventor=Craig+C.+Ovans"
+      }
+   ],
+   "assignees":[
+      "Phoenix Spine Holdings Inc"
+   ],
+   "priority_date":"2016-05-24",
+   "filing_date":"2016-09-02",
+   "publication_date":"2017-06-27",
+   "worldwide_applications":{
+      "2016":[
+         {
+            "filing_date":"2016-05-24",
+            "country_code":"US",
+            "application_number":"US15/163,619",
+            "document_id":"patent/US10201267B2/en",
+            "legal_status_cat":"active",
+            "legal_status":"Active"
+         },
+         {
+            "filing_date":"2016-09-02",
+            "country_code":"US",
+            "application_number":"US15/255,927",
+            "document_id":"patent/US20170340350A1/en",
+            "legal_status_cat":"not_active",
+            "legal_status":"Abandoned"
+         },
+         {
+            "filing_date":"2016-09-02",
+            "country_code":"US",
+            "application_number":"US15/255,917",
+            "document_id":"patent/US9687142B1/en",
+            "legal_status_cat":"active",
+            "legal_status":"Active",
+            "this_app":true
+         }
+      ],
+      "2017":[
+         {
+            "filing_date":"2017-05-24",
+            "country_code":"CA",
+            "application_number":"CA3024867A",
+            "document_id":"patent/CA3024867A1/en",
+            "legal_status_cat":"active",
+            "legal_status":"Pending"
+         },
+         {
+            "filing_date":"2017-05-24",
+            "country_code":"EP",
+            "application_number":"EP17803535.8A",
+            "document_id":"patent/EP3463037A4/en",
+            "legal_status_cat":"active",
+            "legal_status":"Pending"
+         },
+         {
+            "filing_date":"2017-05-24",
+            "country_code":"AU",
+            "application_number":"AU2017270080A",
+            "document_id":"patent/AU2017270080A1/en",
+            "legal_status_cat":"not_active",
+            "legal_status":"Abandoned"
+         },
+         {
+            "filing_date":"2017-05-24",
+            "country_code":"WO",
+            "application_number":"PCT/US2017/034341",
+            "document_id":"patent/WO2017205548A1/en",
+            "legal_status_cat":"active",
+            "legal_status":"Search and Examination"
+         }
+      ],
+      "2022":[
+         {
+            "filing_date":"2022-05-17",
+            "country_code":"AU",
+            "application_number":"AU2022203307A",
+            "document_id":"patent/AU2022203307A1/en",
+            "legal_status_cat":"not_active",
+            "legal_status":"Abandoned"
+         }
+      ],
+      "2024":[
+         {
+            "filing_date":"2024-06-20",
+            "country_code":"AU",
+            "application_number":"AU2024204231A",
+            "document_id":"patent/AU2024204231A1/en",
+            "legal_status_cat":"active",
+            "legal_status":"Pending"
+         }
+      ]
+   },
+   "events":[
+      {
+         "date":"2016-09-02",
+         "title":"Application filed by Phoenix Spine Surgery Center Ltd",
+         "type":"filed",
+         "critical":true,
+         "assignee_search":"Phoenix Spine Surgery Center Ltd"
+      },
+      {
+         "date":"2016-09-02",
+         "title":"Priority to US15/255,917",
+         "type":"priority",
+         "critical":true,
+         "document_id":"patent/US9687142B1/en"
+      },
+      {
+         "date":"2016-09-12",
+         "title":"Assigned to Phoenix Spine Surgery Center, Ltd.",
+         "type":"reassignment",
+         "assignee_search":"Phoenix Spine Surgery Center, Ltd.",
+         "description":[
+            "ASSIGNMENT OF ASSIGNORS INTEREST (SEE DOCUMENT FOR DETAILS).",
+            "Assignors: OVANS, CRAIG C., RUTHERFORD, KIRSTEN, DEROS, YANI, IBARRA, MATTHEW JAMES, KINNARD, JOHN B., LIEBERMAN, DANIEL"
+         ]
+      },
+      {
+         "date":"2017-06-27",
+         "title":"Application granted",
+         "type":"granted",
+         "critical":true
+      },
+      {
+         "date":"2017-06-27",
+         "title":"Publication of US9687142B1",
+         "type":"publication",
+         "critical":true,
+         "document_id":"patent/US9687142B1/en"
+      },
+      {
+         "date":"2018-06-24",
+         "title":"Assigned to PHOENIX SPINE HOLDINGS, INC.",
+         "type":"reassignment",
+         "assignee_search":"PHOENIX SPINE HOLDINGS, INC.",
+         "description":[
+            "CHANGE OF NAME (SEE DOCUMENT FOR DETAILS).",
+            "Assignors: PHOENIX SPINE SURGERY CENTER LTD"
+         ]
+      },
+      {
+         "date":"Status",
+         "title":"Active",
+         "type":"legal-status",
+         "critical":true,
+         "current":true
+      },
+      {
+         "date":"2036-05-24",
+         "title":"Anticipated expiration",
+         "type":"legal-status",
+         "critical":true
+      }
+   ],
+   "external_links":[
+      {
+         "text":"USPTO",
+         "link":"https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&d=PALL&s1=9687142.PN."
+      },
+      {
+         "text":"USPTO PatentCenter",
+         "link":"https://patentcenter.uspto.gov/applications/15255917"
+      },
+      {
+         "text":"USPTO Assignment",
+         "link":"https://assignment.uspto.gov/patent/index.html#/patent/search/resultFilter?searchInput=9687142"
+      },
+      {
+         "text":"Espacenet",
+         "link":"https://worldwide.espacenet.com/publicationDetails/biblio?CC=US&NR=9687142B1&KC=B1&FT=D"
+      },
+      {
+         "text":"Global Dossier",
+         "link":"https://globaldossier.uspto.gov/result/application/US/15255917/1"
+      },
+      {
+         "text":"Discuss",
+         "link":"https://patents.stackexchange.com/questions/tagged/US9687142"
+      }
+   ],
+   "images":[
+      "https://patentimages.storage.googleapis.com/3e/9e/06/cf2d6905c7ff10/US09687142-20170627-D00000.png",
+      "https://patentimages.storage.googleapis.com/bb/47/10/52846eb666a9eb/US09687142-20170627-D00001.png",
+      "https://patentimages.storage.googleapis.com/75/fd/67/287e39bd4a07b2/US09687142-20170627-D00002.png",
+      "https://patentimages.storage.googleapis.com/d0/b2/44/7b5ccf784989aa/US09687142-20170627-D00003.png",
+      "https://patentimages.storage.googleapis.com/3b/99/e5/c7473d493e7e1b/US09687142-20170627-D00004.png",
+      "https://patentimages.storage.googleapis.com/4b/6c/97/a7b56c58a59a27/US09687142-20170627-D00005.png",
+      "https://patentimages.storage.googleapis.com/08/04/50/ee0d5e0c6c83ca/US09687142-20170627-D00006.png",
+      "https://patentimages.storage.googleapis.com/ba/85/91/894179fd109768/US09687142-20170627-D00007.png",
+      "https://patentimages.storage.googleapis.com/d1/dd/e0/b661dbe8742f24/US09687142-20170627-D00008.png",
+      "https://patentimages.storage.googleapis.com/f4/a4/63/086e9c48a001ab/US09687142-20170627-D00009.png",
+      "https://patentimages.storage.googleapis.com/2a/8e/da/c1dbb42a213e3a/US09687142-20170627-D00010.png",
+      "https://patentimages.storage.googleapis.com/c1/47/49/3f6fafcb5e0928/US09687142-20170627-D00011.png",
+      "https://patentimages.storage.googleapis.com/a3/76/4a/efad0fb577bff5/US09687142-20170627-D00012.png",
+      "https://patentimages.storage.googleapis.com/94/58/70/c58048437a03a9/US09687142-20170627-D00013.png",
+      "https://patentimages.storage.googleapis.com/c4/77/8c/2ea6423d4f59e8/US09687142-20170627-D00014.png",
+      "https://patentimages.storage.googleapis.com/7c/ad/0c/538958af19a032/US09687142-20170627-D00015.png",
+      "https://patentimages.storage.googleapis.com/6d/e7/35/44c1bb8bb99f48/US09687142-20170627-D00016.png",
+      "https://patentimages.storage.googleapis.com/17/45/03/86a62213b03f44/US09687142-20170627-D00017.png",
+      "https://patentimages.storage.googleapis.com/84/76/88/d576f4d686658f/US09687142-20170627-D00018.png",
+      "https://patentimages.storage.googleapis.com/a7/44/b6/4dad4ad9a07b77/US09687142-20170627-D00019.png",
+      "https://patentimages.storage.googleapis.com/a6/cb/7f/a310ff95e6a48c/US09687142-20170627-D00020.png"
+   ],
+   "classifications":[
+      {
+         "code":"A61B1/3135",
+         "description":"Instruments for performing medical examinations of the interior of cavities or tubes of the body by visual or photographical inspection, e.g. endoscopes; Illuminating arrangements therefor for introducing through surgical openings, e.g. laparoscopes for examination of the epidural or the spinal space",
+         "leaf":true,
+         "first_code":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/0008",
+         "description":"Insertion part of the endoscope body characterised by distal tip features",
+         "leaf":true,
+         "first_code":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00045",
+         "description":"Display arrangement",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00052",
+         "description":"Display arrangement positioned at proximal end of the endoscope body",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00066",
+         "description":"Proximal part of endoscope body, e.g. handles",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00135",
+         "description":"Oversleeves mounted on the endoscope prior to insertion",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00142",
+         "description":"Instruments for performing medical examinations of the interior of cavities or tubes of the body by visual or photographical inspection, e.g. endoscopes; Illuminating arrangements therefor with means for preventing contamination, e.g. by using a sanitary sheath",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00154",
+         "description":"Holding or positioning arrangements using guiding arrangements for insertion",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/00179",
+         "description":"Optical arrangements characterised by the viewing angles for off-axis viewing",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/015",
+         "description":"Control of fluid supply or evacuation",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/018",
+         "description":"Instruments for performing medical examinations of the interior of cavities or tubes of the body by visual or photographical inspection, e.g. endoscopes; Illuminating arrangements therefor characterised by internal passages or accessories therefor for receiving instruments",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/04",
+         "description":"Instruments for performing medical examinations of the interior of cavities or tubes of the body by visual or photographical inspection, e.g. endoscopes; Illuminating arrangements therefor combined with photographic or television appliances",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/045",
+         "description":"Control thereof",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B1/05",
+         "description":"Instruments for performing medical examinations of the interior of cavities or tubes of the body by visual or photographical inspection, e.g. endoscopes; Illuminating arrangements therefor combined with photographic or television appliances characterised by the image sensor, e.g. camera, being in the distal end portion",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B17/3401",
+         "description":"Puncturing needles for the peridural or subarachnoid space or the plexus, e.g. for anaesthesia",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B17/3423",
+         "description":"Access ports, e.g. toroid shape introducers for instruments or hands",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B17/3468",
+         "description":"Trocars; Puncturing needles for implanting or removing devices, e.g. prostheses, implants, seeds, wires",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B17/3478",
+         "description":"Endoscopic needles, e.g. for infusion",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B18/148",
+         "description":"Probes or electrodes therefor having a short, rigid shaft for accessing the inner body transcutaneously, e.g. for neurosurgery or arthroscopy",
+         "leaf":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2017/3437",
+         "description":"Cannulas with means for removing or absorbing fluid, e.g. wicks or absorbent pads",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2017/3447",
+         "description":"Linked multiple cannulas",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/00339",
+         "description":"Spine, e.g. intervertebral disc",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/00434",
+         "description":"Neural system",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/0044",
+         "description":"Spinal cord",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/00589",
+         "description":"Coagulation",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/00595",
+         "description":"Cauterization",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2018/00601",
+         "description":"Cutting",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      },
+      {
+         "code":"A61B2218/002",
+         "description":"Irrigation",
+         "leaf":true,
+         "additional":true,
+         "is_cpc":true
+      }
+   ],
+   "abstract":"Methods and apparatus for direct visual rhizotomy using an elongated tubular sheath. The sheath includes: a proximal end configured to removably receive a cannula; a distal end; a horizontal shaft having a longitudinal axis extending between the proximal end and the distal end; a first cut-away generally defining a first plane at the distal end, the first cut-away characterized by a first angle relative to a vertical plane; and a second cut-away generally defining a second plane at the distal end, the second cut-away characterized by a second angle relative to a horizontal plane. The sheath further includes an endoscope camera disposed at the distal end, the camera having a line of sight substantially orthogonal to the first plane.",
+   "description_link":"https://serpapi.com/searches/67ec5ee159e4f8404456b398/google_patents_details/description.html",
+   "claims":[
+      "1. A method of stabilizing an endoscopic assembly on an internal anatomical surface during surgery, comprising:\nproviding a tubular sheath having an axis and a distal end, the distal end including a first surface defining an aperture and a second surface defining a docking land, the first and second surfaces each inclined relative to the axis at respective angles in the range of about 45 to 75 degrees;\ninserting the distal end of the sheath into a patient;\ninserting an endoscope into the sheath and disposing an endoscope camera proximate the aperture;\ndisplaying a signal received from the camera on a screen; and\nusing the displayed signal to maneuver the docking land onto the anatomical surface.",
+      "2. The method of claim 1, further comprising:\nequipping the endoscopic assembly with an actuator; and\nwhile the docking land is disposed on the anatomical surface, manipulating the actuator to move the camera a predetermined distance from a retracted position to an extended position.",
+      "3. The method of claim 2, wherein the actuator comprises a spring, and further wherein manipulating the actuator comprises squeezing a trigger to compress the spring.",
+      "4. The method of claim 2, wherein moving the camera to the extended position causes the displayed signal to provide a close-up view of the anatomical surface.",
+      "5. The method of claim 2, wherein the predetermined distance is in the range of about 2 to 3 millimeters.",
+      "6. The method of claim 2, further comprising:\ninserting a cutter into the endoscopic assembly; and\nusing the cutter to sever tissue on the anatomical surface while the docking land rests on the anatomical surface.",
+      "7. The method of claim 6, wherein the cutter comprises an electrode, the anatomical surface comprises a transverse process of a vertebral body, and the tissue comprises a medial branch of a spinal nerve root.",
+      "8. The method of claim 7, wherein severing the tissue comprises extending the electrode beyond the distal end of the sheath to thereby cauterize the medial branch.",
+      "9. The method of claim 6, further comprising:\nafter severing the tissue, removing the endoscope from the sheath; and\nafter removing the endo scope from the sheath, removing the sheath from the patient.",
+      "10. The method of claim 1, further comprising:\ninserting a cannula into the sheath while the distal end of the sheath is inside the patient;\nwherein inserting the endoscope into the sheath comprises inserting the endoscope into an endoscopic channel of the cannula.",
+      "11. The method of claim 10, wherein the cannula further comprises a fluid ingress channel and a fluid egress channel, the method further comprising:\npumping fluid into the ingress channel to thereby maintain an expanded fluid bubble in the tissue proximate the camera.",
+      "12. The method of claim 1, wherein the docking land comprises a substantially flat surface.",
+      "13. The method of claim 1, wherein at least a portion of the docking land comprises a substantially concave surface.",
+      "14. A method of facilitating a direct visualized rhizotomy (DVR) surgical procedure on a human patient, comprising:\nproviding an endoscopic assembly including a sheath, a camera, and a cutter, wherein the distal end of the sheath comprises: i) a docking land cut at a first angle with respect to a longitudinal axis of the sheath; and ii) an oppositely disposed aperture cut at a second angle with respect to the longitudinal axis such that a line of sight associated with the camera is inclined away from the docking land;\ninserting the distal end of the endoscopic assembly into the patient;\ndisplaying a visual feed from the camera;\nusing the visual feed to stabilize the docking land on a transverse process proximate a twig; and\nsevering the twig using the cutter.",
+      "15. The method of claim 14, wherein the first angle is in the range of 45° to 75°.",
+      "16. The method of claim 14, further comprising:\nproviding the endoscopic assembly with a toggle mechanism; and\nmanually actuating the toggle mechanism to move the camera back and forth along the longitudinal axis to thereby extend and retract the camera.",
+      "17. The method of claim 16, wherein the toggle mechanism comprises a spring loaded trigger.",
+      "18. The method of claim 14, further comprising:\nproviding the endoscopic assembly with at least one fluid channel; and\npumping fluid through the at least one fluid channel to thereby maintain a fluid bubble in the vicinity of the twig.",
+      "19. The method of claim 14, wherein the sheath comprises an inner wall, and the endoscopic assembly further comprises a cannula having a first lobe and a second lobe defining a fluid channel therebetween and partially bounded by the inner wall.",
+      "20. A method of stabilizing an endoscopic assembly on an internal anatomical surface during surgery, comprising:\nproviding a tubular sheath having a sheath axis and a distal end including a docking land inclined relative to the sheath axis at an angle in the range of about 45 to 75 degrees;\ninserting the distal end of the sheath into a patient;\nstabilize the docking land on a transverse process proximate a twig;\ninserting a tool through the sheath; and\nsevering the twig with the tool."
+   ],
+   "parent_applications":[
+      {
+         "application_number":"US15/163,619",
+         "relation_type":"Continuation",
+         "representative_publication":"US10201267B2",
+         "primary_language":"en",
+         "priority_date":"2016-05-24",
+         "filing_date":"2016-05-24",
+         "title":"Methods and apparatus for facilitating direct visualized rhizotomy"
+      }
+   ],
+   "priority_applications":[
+      {
+         "application_number":"US15/255,917",
+         "representative_publication":"US9687142B1",
+         "primary_language":"en",
+         "priority_date":"2016-05-24",
+         "filing_date":"2016-09-02",
+         "title":"Method of stabilizing an endoscopic assembly"
+      }
+   ],
+   "applications_claiming_priority":[
+      {
+         "application_number":"US15/163,619",
+         "representative_publication":"US10201267B2",
+         "primary_language":"en",
+         "priority_date":"2016-05-24",
+         "filing_date":"2016-05-24",
+         "title":"Methods and apparatus for facilitating direct visualized rhizotomy"
+      },
+      {
+         "application_number":"US15/255,917",
+         "representative_publication":"US9687142B1",
+         "primary_language":"en",
+         "priority_date":"2016-05-24",
+         "filing_date":"2016-09-02",
+         "title":"Method of stabilizing an endoscopic assembly"
+      }
+   ],
+   "family_id":"59069586",
+   "patent_citations":{
+      "original":[
+         {
+            "publication_number":"US6007483A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1994-06-01",
+            "publication_date":"1999-12-28",
+            "assignee_original":"Archimedes Surgical, Inc.",
+            "title":"Surgical method for developing an anatomic structure",
+            "patent_id":"patent/US6007483A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS6007483A%2Fen"
+         },
+         {
+            "publication_number":"US20070129719A1",
+            "primary_language":"en",
+            "priority_date":"2005-05-26",
+            "publication_date":"2007-06-07",
+            "assignee_original":"Amar Kendale",
+            "title":"Apparatus and methods for performing minimally-invasive surgical procedures",
+            "patent_id":"patent/US20070129719A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20070129719A1%2Fen"
+         },
+         {
+            "publication_number":"US20120071714A1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2010-09-20",
+            "publication_date":"2012-03-22",
+            "assignee_original":"Jansen Lex P",
+            "title":"Cannulotome",
+            "patent_id":"patent/US20120071714A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20120071714A1%2Fen"
+         }
+      ],
+      "family_to_family":[
+         {
+            "publication_number":"US2112056A",
+            "primary_language":"en",
+            "priority_date":"1934-09-19",
+            "publication_date":"1938-03-22",
+            "assignee_original":"Wappler Frederick Charles",
+            "title":"Blunted endoscopic instrument",
+            "patent_id":"patent/US2112056A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS2112056A%2Fen"
+         },
+         {
+            "publication_number":"US3763843A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1972-06-16",
+            "publication_date":"1973-10-09",
+            "assignee_original":"Victor Comptometer Corp",
+            "title":"Pneumatic gun",
+            "patent_id":"patent/US3763843A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS3763843A%2Fen"
+         },
+         {
+            "publication_number":"MX148056A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1978-05-09",
+            "publication_date":"1983-03-09",
+            "assignee_original":"Girling Ltd",
+            "title":"IMPROVED CONTROL VALVE FOR A VEHICLE BRAKE SYSTEM",
+            "patent_id":"patent/MX148056A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FMX148056A%2Fen"
+         },
+         {
+            "publication_number":"JPS55110528A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1979-02-20",
+            "publication_date":"1980-08-26",
+            "assignee_original":"Olympus Optical Co",
+            "title":"Endoscope",
+            "patent_id":"patent/JPS55110528A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJPS55110528A%2Fen"
+         },
+         {
+            "publication_number":"GB2048686B",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1979-05-15",
+            "publication_date":"1983-03-16",
+            "assignee_original":"Wolf Gmbh Richard",
+            "title":"Endoscopc instrumentation apparatus",
+            "patent_id":"patent/GB2048686B/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FGB2048686B%2Fen"
+         },
+         {
+            "publication_number":"JPS5812642A",
+            "primary_language":"en",
+            "priority_date":"1981-07-16",
+            "publication_date":"1983-01-24",
+            "assignee_original":"オリンパス光学工業株式会社",
+            "title":"Hard endoscope",
+            "patent_id":"patent/JPS5812642A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJPS5812642A%2Fen"
+         },
+         {
+            "publication_number":"DE3202693C2",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1982-01-28",
+            "publication_date":"1985-02-14",
+            "assignee_original":"Richard Wolf Gmbh, 7134 Knittlingen",
+            "title":"Hysteroscope",
+            "patent_id":"patent/DE3202693C2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FDE3202693C2%2Fen"
+         },
+         {
+            "publication_number":"JPS58190913A",
+            "primary_language":"en",
+            "priority_date":"1982-05-01",
+            "publication_date":"1983-11-08",
+            "assignee_original":"Olympus Optical Co Ltd",
+            "title":"Strabismal hard endoscope",
+            "patent_id":"patent/JPS58190913A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJPS58190913A%2Fen"
+         },
+         {
+            "publication_number":"US4624243A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1985-04-08",
+            "publication_date":"1986-11-25",
+            "assignee_original":"American Hospital Supply Corp.",
+            "title":"Endoscope having a reusable eyepiece and a disposable distal section",
+            "patent_id":"patent/US4624243A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4624243A%2Fen"
+         },
+         {
+            "publication_number":"US4697577A",
+            "primary_language":"en",
+            "priority_date":"1986-05-22",
+            "publication_date":"1987-10-06",
+            "assignee_original":"Baxter Travenol Laboratories, Inc.",
+            "title":"Scanning microtelescope for surgical applications",
+            "patent_id":"patent/US4697577A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4697577A%2Fen"
+         },
+         {
+            "publication_number":"US5169397A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1990-02-08",
+            "publication_date":"1992-12-08",
+            "assignee_original":"Olympus Optical Co., Ltd.",
+            "title":"Medical instrument",
+            "patent_id":"patent/US5169397A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS5169397A%2Fen"
+         },
+         {
+            "publication_number":"US5554100A",
+            "primary_language":"en",
+            "priority_date":"1994-03-24",
+            "publication_date":"1996-09-10",
+            "assignee_original":"United States Surgical Corporation",
+            "title":"Arthroscope with shim for angularly orienting illumination fibers",
+            "patent_id":"patent/US5554100A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS5554100A%2Fen"
+         },
+         {
+            "publication_number":"US5569183A",
+            "primary_language":"en",
+            "priority_date":"1994-06-01",
+            "publication_date":"1996-10-29",
+            "assignee_original":"Archimedes Surgical, Inc.",
+            "title":"Method for performing surgery around a viewing space in the interior of the body",
+            "patent_id":"patent/US5569183A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS5569183A%2Fen"
+         },
+         {
+            "publication_number":"US6032673A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1994-10-13",
+            "publication_date":"2000-03-07",
+            "assignee_original":"Femrx, Inc.",
+            "title":"Methods and devices for tissue removal",
+            "patent_id":"patent/US6032673A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS6032673A%2Fen"
+         },
+         {
+            "publication_number":"US6494881B1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"1997-09-30",
+            "publication_date":"2002-12-17",
+            "assignee_original":"Scimed Life Systems, Inc.",
+            "title":"Apparatus and method for electrode-surgical tissue removal having a selectively insulated electrode",
+            "patent_id":"patent/US6494881B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS6494881B1%2Fen"
+         },
+         {
+            "publication_number":"US6916286B2",
+            "primary_language":"en",
+            "priority_date":"2001-08-09",
+            "publication_date":"2005-07-12",
+            "assignee_original":"Smith & Nephew, Inc.",
+            "title":"Endoscope with imaging probe",
+            "patent_id":"patent/US6916286B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS6916286B2%2Fen"
+         },
+         {
+            "publication_number":"US7998062B2",
+            "primary_language":"en",
+            "priority_date":"2004-03-29",
+            "publication_date":"2011-08-16",
+            "assignee_original":"Superdimension, Ltd.",
+            "title":"Endoscope structures and techniques for navigating to a target in branched structure",
+            "patent_id":"patent/US7998062B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS7998062B2%2Fen"
+         },
+         {
+            "publication_number":"US8075476B2",
+            "primary_language":"en",
+            "priority_date":"2004-07-27",
+            "publication_date":"2011-12-13",
+            "assignee_original":"Intuitive Surgical Operations, Inc.",
+            "title":"Cannula system and method of use",
+            "patent_id":"patent/US8075476B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS8075476B2%2Fen"
+         },
+         {
+            "publication_number":"EP2272420B1",
+            "primary_language":"en",
+            "priority_date":"2004-08-24",
+            "publication_date":"2013-06-19",
+            "assignee_original":"The General Hospital Corporation",
+            "title":"Apparatus for imaging of vessel segments",
+            "patent_id":"patent/EP2272420B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP2272420B1%2Fen"
+         },
+         {
+            "publication_number":"FR2897703B1",
+            "primary_language":"en",
+            "priority_date":"2006-02-20",
+            "publication_date":"2008-04-25",
+            "assignee_original":"Univ Grenoble 1",
+            "title":"AUTOMATIC DETECTION OF A SURGICAL TOOL ON AN IMAGE PROVIDED BY A MEDICAL IMAGING SYSTEM",
+            "patent_id":"patent/FR2897703B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FFR2897703B1%2Fen"
+         },
+         {
+            "publication_number":"US8323182B2",
+            "primary_language":"en",
+            "priority_date":"2007-12-18",
+            "publication_date":"2012-12-04",
+            "assignee_original":"Manohara Harish M",
+            "title":"Endoscope and system and method of operation thereof",
+            "patent_id":"patent/US8323182B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS8323182B2%2Fen"
+         },
+         {
+            "publication_number":"WO2009099633A1",
+            "primary_language":"en",
+            "priority_date":"2008-02-07",
+            "publication_date":"2009-08-13",
+            "assignee_original":"Gumbs Andrew A",
+            "title":"Remote endoscope handle manipulation",
+            "patent_id":"patent/WO2009099633A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FWO2009099633A1%2Fen"
+         },
+         {
+            "publication_number":"ES2361099B1",
+            "primary_language":"en",
+            "priority_date":"2008-05-26",
+            "publication_date":"2012-05-08",
+            "assignee_original":"Rudolf Morgenstern Lopez",
+            "title":"\"INTERVERTEBRAL PROSTHESIS\"",
+            "patent_id":"patent/ES2361099B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FES2361099B1%2Fen"
+         },
+         {
+            "publication_number":"EP2361046B1",
+            "primary_language":"en",
+            "priority_date":"2008-06-06",
+            "publication_date":"2019-04-24",
+            "assignee_original":"Providence Medical Technology, Inc.",
+            "title":"Cervical distraction/implant delivery device",
+            "patent_id":"patent/EP2361046B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP2361046B1%2Fen"
+         },
+         {
+            "publication_number":"US20100022824A1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2008-07-22",
+            "publication_date":"2010-01-28",
+            "assignee_original":"Cybulski James S",
+            "title":"Tissue modification devices and methods of using the same",
+            "patent_id":"patent/US20100022824A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20100022824A1%2Fen"
+         },
+         {
+            "publication_number":"US9629729B2",
+            "primary_language":"en",
+            "priority_date":"2009-09-18",
+            "publication_date":"2017-04-25",
+            "assignee_original":"Spinal Surgical Strategies, Llc",
+            "title":"Biological delivery system with adaptable fusion cage interface",
+            "patent_id":"patent/US9629729B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9629729B2%2Fen"
+         },
+         {
+            "publication_number":"CN101669845B",
+            "primary_language":"en",
+            "priority_date":"2009-10-09",
+            "publication_date":"2011-11-30",
+            "assignee_original":"江红星",
+            "title":"Implant importer in centrum interspaces",
+            "patent_id":"patent/CN101669845B/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FCN101669845B%2Fen"
+         },
+         {
+            "publication_number":"US8845731B2",
+            "primary_language":"en",
+            "priority_date":"2010-09-03",
+            "publication_date":"2014-09-30",
+            "assignee_original":"Globus Medical, Inc.",
+            "title":"Expandable fusion device and method of installation thereof",
+            "patent_id":"patent/US8845731B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS8845731B2%2Fen"
+         },
+         {
+            "publication_number":"US9427138B2",
+            "primary_language":"en",
+            "priority_date":"2011-09-20",
+            "publication_date":"2016-08-30",
+            "assignee_original":"Boston Scientific Scimed, Inc.",
+            "title":"Access devices and related methods of use",
+            "patent_id":"patent/US9427138B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9427138B2%2Fen"
+         },
+         {
+            "publication_number":"FR2996437B1",
+            "primary_language":"en",
+            "priority_date":"2012-10-05",
+            "publication_date":"2014-12-19",
+            "assignee_original":"Centre Nat Rech Scient",
+            "title":"MULTI-VISION IMAGING SYSTEM FOR LAPAROSCOPIC SURGERY",
+            "patent_id":"patent/FR2996437B1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FFR2996437B1%2Fen"
+         },
+         {
+            "publication_number":"JP2014132979A",
+            "primary_language":"en",
+            "priority_date":"2013-01-10",
+            "publication_date":"2014-07-24",
+            "assignee_original":"Advanced Healthcare Kk",
+            "title":"Trocar and surgery support system",
+            "patent_id":"patent/JP2014132979A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJP2014132979A%2Fen"
+         },
+         {
+            "publication_number":"US20140276015A1",
+            "primary_language":"en",
+            "priority_date":"2013-03-14",
+            "publication_date":"2014-09-18",
+            "assignee_original":"Volcano Corporation",
+            "title":"Devices and methods for imaging and crossing occluded vessels",
+            "patent_id":"patent/US20140276015A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20140276015A1%2Fen"
+         },
+         {
+            "publication_number":"US9370295B2",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2014-01-13",
+            "publication_date":"2016-06-21",
+            "assignee_original":"Trice Medical, Inc.",
+            "title":"Fully integrated, disposable tissue visualization device",
+            "patent_id":"patent/US9370295B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9370295B2%2Fen"
+         },
+         {
+            "publication_number":"WO2015139012A1",
+            "primary_language":"en",
+            "priority_date":"2014-03-14",
+            "publication_date":"2015-09-17",
+            "assignee_original":"Hrayr Karnig Shahinian",
+            "title":"Endoscope system and method of operation thereof",
+            "patent_id":"patent/WO2015139012A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FWO2015139012A1%2Fen"
+         },
+         {
+            "publication_number":"US10201267B2",
+            "primary_language":"en",
+            "priority_date":"2016-05-24",
+            "publication_date":"2019-02-12",
+            "assignee_original":"Phoenix Spine Holdings, Inc.",
+            "title":"Methods and apparatus for facilitating direct visualized rhizotomy",
+            "patent_id":"patent/US10201267B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS10201267B2%2Fen"
+         }
+      ]
+   },
+   "cited_by":{
+      "original":[
+         {
+            "publication_number":"WO2017205548A1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2016-05-24",
+            "publication_date":"2017-11-30",
+            "assignee_original":"Phoenix Spine Surgery Center, Ltd.",
+            "title":"Methods and apparatus for facilitating direct visualized rhizotomy",
+            "patent_id":"patent/WO2017205548A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FWO2017205548A1%2Fen"
+         },
+         {
+            "publication_number":"CN110037778A",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2019-04-30",
+            "publication_date":"2019-07-23",
+            "assignee_original":"青岛市中心医院",
+            "title":"A kind of gastrointestinal surgery abdominal operation sting device",
+            "patent_id":"patent/CN110037778A/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FCN110037778A%2Fen"
+         },
+         {
+            "publication_number":"US10376382B2",
+            "primary_language":"en",
+            "priority_date":"2016-11-16",
+            "publication_date":"2019-08-13",
+            "assignee_original":"Phoenix Spine Holdings, Inc.",
+            "title":"Methods and apparatus for facilitating a posterior lumbar interbody fusion procedure",
+            "patent_id":"patent/US10376382B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS10376382B2%2Fen"
+         },
+         {
+            "publication_number":"AT16437U1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2018-08-10",
+            "publication_date":"2019-10-15",
+            "assignee_original":"Lohmann & Rauscher Gmbh",
+            "title":"protective sleeve",
+            "patent_id":"patent/AT16437U1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FAT16437U1%2Fen"
+         },
+         {
+            "publication_number":"US11076902B2",
+            "primary_language":"en",
+            "priority_date":"2018-02-22",
+            "publication_date":"2021-08-03",
+            "assignee_original":"Phoenix Spine Holdings, Inc.",
+            "title":"Locking screw assembly for facilitating direct lateral interbody fusion procedures",
+            "patent_id":"patent/US11076902B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS11076902B2%2Fen"
+         }
+      ],
+      "family_to_family":[
+         {
+            "publication_number":"WO2019071145A1",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2017-10-06",
+            "publication_date":"2019-04-11",
+            "assignee_original":"Beaver-Visitec International, Inc.",
+            "title":"Disposable endoscope cover, reusable endoscope, and system",
+            "patent_id":"patent/WO2019071145A1/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FWO2019071145A1%2Fen"
+         },
+         {
+            "publication_number":"US11998284B2",
+            "primary_language":"en",
+            "examiner_cited":"*",
+            "priority_date":"2018-12-07",
+            "publication_date":"2024-06-04",
+            "assignee_original":"Acclarent, Inc.",
+            "title":"Articulating guide with integral position sensor",
+            "patent_id":"patent/US11998284B2/en",
+            "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS11998284B2%2Fen"
+         }
+      ]
+   },
+   "similar_documents":[
+      {
+         "is_patent":true,
+         "publication_number":"US9687142B1",
+         "primary_language":"en",
+         "publication_date":"2017-06-27",
+         "title":"Method of stabilizing an endoscopic assembly",
+         "patent_id":"patent/US9687142B1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9687142B1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"AU2019205969B2",
+         "primary_language":"en",
+         "publication_date":"2020-12-10",
+         "title":"Minimally invasive methods for spinal facet therapy to alleviate pain and associated surgical tools, kits",
+         "patent_id":"patent/AU2019205969B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FAU2019205969B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US20210228411A1",
+         "primary_language":"en",
+         "publication_date":"2021-07-29",
+         "title":"Devices, systems, and methods for otology",
+         "patent_id":"patent/US20210228411A1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS20210228411A1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US6371968B1",
+         "primary_language":"en",
+         "publication_date":"2002-04-16",
+         "title":"Cavity retaining tool for bone surgery, a cavity retaining tool for general surgery, an endoscopic surgery system involving the use of a cavity retaining tool, and a procedure for surgery",
+         "patent_id":"patent/US6371968B1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS6371968B1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"JP5001833B2",
+         "primary_language":"en",
+         "publication_date":"2012-08-15",
+         "title":"Apparatus and method for treatment or removal of an intervertebral disc",
+         "patent_id":"patent/JP5001833B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJP5001833B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US9282988B2",
+         "primary_language":"en",
+         "publication_date":"2016-03-15",
+         "title":"Formed deployable superelastic blade and method of use",
+         "patent_id":"patent/US9282988B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9282988B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"EP2967717B1",
+         "primary_language":"en",
+         "publication_date":"2019-12-25",
+         "title":"Radio frequencey catheter to target ligamentum flavum",
+         "patent_id":"patent/EP2967717B1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FEP2967717B1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"JP2016501642A",
+         "primary_language":"en",
+         "publication_date":"2016-01-21",
+         "title":"Discectomy device and method",
+         "patent_id":"patent/JP2016501642A/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJP2016501642A%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"JP2008516694A",
+         "primary_language":"en",
+         "publication_date":"2008-05-22",
+         "title":"Apparatus and method for tissue removal",
+         "patent_id":"patent/JP2008516694A/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FJP2008516694A%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"AU2007240152A1",
+         "primary_language":"en",
+         "publication_date":"2008-06-26",
+         "title":"Bipolar tissue debrider and method",
+         "patent_id":"patent/AU2007240152A1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FAU2007240152A1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US4885004A",
+         "primary_language":"en",
+         "publication_date":"1989-12-05",
+         "title":"Rotating stylus cystitome",
+         "patent_id":"patent/US4885004A/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS4885004A%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US12178720B2",
+         "primary_language":"en",
+         "publication_date":"2024-12-31",
+         "title":"Systems and methods for Percutaneous Spinal Interbody Fusion (PSIF)",
+         "patent_id":"patent/US12178720B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS12178720B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US10912605B2",
+         "primary_language":"en",
+         "publication_date":"2021-02-09",
+         "title":"Devices, kits and methods relating to treatment of facet joints",
+         "patent_id":"patent/US10912605B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS10912605B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"DE602005003901T2",
+         "primary_language":"en",
+         "publication_date":"2008-04-17",
+         "title":"Electrosurgical radiofrequency probe for use in the intervertebral area",
+         "patent_id":"patent/DE602005003901T2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FDE602005003901T2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US10070918B2",
+         "primary_language":"en",
+         "publication_date":"2018-09-11",
+         "title":"Ablator for spinal disc removal",
+         "patent_id":"patent/US10070918B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS10070918B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US9526570B2",
+         "primary_language":"en",
+         "publication_date":"2016-12-27",
+         "title":"Tissue cutting cap",
+         "patent_id":"patent/US9526570B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9526570B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"US9161774B2",
+         "primary_language":"en",
+         "publication_date":"2015-10-20",
+         "title":"Rotatable cutting instrument",
+         "patent_id":"patent/US9161774B2/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FUS9161774B2%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"FR3021520A1",
+         "primary_language":"en",
+         "publication_date":"2015-12-04",
+         "title":"ABLATION CANNULA AND KIT WITH INSERT",
+         "patent_id":"patent/FR3021520A1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FFR3021520A1%2Fen"
+      },
+      {
+         "is_patent":true,
+         "publication_number":"RU2608623C1",
+         "primary_language":"en",
+         "publication_date":"2017-01-23",
+         "title":"Replaceable head piece to electrode-knife of placemaker for dissection of cicatricial tissues surrounding the extravascular fragment of placemaker electrode (versions)",
+         "patent_id":"patent/RU2608623C1/en",
+         "serpapi_link":"https://serpapi.com/search.json?engine=google_patents_details&patent_id=patent%2FRU2608623C1%2Fen"
+      }
+   ],
+   "legal_events":[
+      {
+         "date":"2016-09-12",
+         "code":"AS",
+         "title":"Assignment",
+         "attributes":[
+            {
+               "label":"Owner name",
+               "value":"PHOENIX SPINE SURGERY CENTER, LTD., ARIZONA"
+            },
+            {
+               "label":"Free format text",
+               "value":"ASSIGNMENT OF ASSIGNORS INTEREST;ASSIGNORS:LIEBERMAN, DANIEL;DEROS, YANI;IBARRA, MATTHEW JAMES;AND OTHERS;SIGNING DATES FROM 20160523 TO 20160524;REEL/FRAME:039701/0262"
+            }
+         ]
+      },
+      {
+         "date":"2017-06-07",
+         "code":"STCF",
+         "title":"Information on status: patent grant",
+         "attributes":[
+            {
+               "label":"Free format text",
+               "value":"PATENTED CASE"
+            }
+         ]
+      },
+      {
+         "date":"2018-06-24",
+         "code":"AS",
+         "title":"Assignment",
+         "attributes":[
+            {
+               "label":"Owner name",
+               "value":"PHOENIX SPINE HOLDINGS, INC., ARIZONA"
+            },
+            {
+               "label":"Free format text",
+               "value":"CHANGE OF NAME;ASSIGNOR:PHOENIX SPINE SURGERY CENTER LTD;REEL/FRAME:046186/0065"
+            },
+            {
+               "label":"Effective date",
+               "value":"20180622"
+            }
+         ]
+      },
+      {
+         "date":"2020-07-31",
+         "code":"MAFP",
+         "title":"Maintenance fee payment",
+         "attributes":[
+            {
+               "label":"Free format text",
+               "value":"PAYMENT OF MAINTENANCE FEE, 4TH YR, SMALL ENTITY (ORIGINAL EVENT CODE: M2551); ENTITY STATUS OF PATENT OWNER: SMALL ENTITY"
+            },
+            {
+               "label":"Year of fee payment",
+               "value":"4"
+            }
+         ]
+      }
+   ],
+   "concepts":{
+      "match":[
+         {
+            "id":"238000000034",
+            "name":"method",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "title",
+               "claims",
+               "abstract",
+               "description"
+            ],
+            "count":104
+         },
+         {
+            "id":"230000000087",
+            "name":"stabilizing effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "title",
+               "claims",
+               "description"
+            ],
+            "count":4
+         },
+         {
+            "id":"230000000007",
+            "name":"visual effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "abstract",
+               "description"
+            ],
+            "count":7
+         },
+         {
+            "id":"239000012530",
+            "name":"fluid",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":92
+         },
+         {
+            "id":"230000008569",
+            "name":"process",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":53
+         },
+         {
+            "id":"238000003032",
+            "name":"molecular docking",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":19
+         },
+         {
+            "id":"230000007246",
+            "name":"mechanism",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":12
+         },
+         {
+            "id":"238000001356",
+            "name":"surgical procedure",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":9
+         },
+         {
+            "id":"210000000273",
+            "name":"spinal nerve root",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "claims",
+               "description"
+            ],
+            "count":6
+         },
+         {
+            "id":"238000005086",
+            "name":"pumping",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "claims"
+            ],
+            "count":2
+         },
+         {
+            "id":"208000002193",
+            "name":"Pain",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":13
+         },
+         {
+            "id":"210000005036",
+            "name":"nerve",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":9
+         },
+         {
+            "id":"230000002262",
+            "name":"irrigation",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":8
+         },
+         {
+            "id":"238000003973",
+            "name":"irrigation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":8
+         },
+         {
+            "id":"210000001519",
+            "name":"tissue",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":7
+         },
+         {
+            "id":"210000002517",
+            "name":"zygapophyseal joint",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":6
+         },
+         {
+            "id":"239000000523",
+            "name":"sample",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":5
+         },
+         {
+            "id":"230000000153",
+            "name":"supplemental effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":5
+         },
+         {
+            "id":"210000003813",
+            "name":"thumb",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":5
+         },
+         {
+            "id":"230000001112",
+            "name":"coagulating effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":4
+         },
+         {
+            "id":"210000005224",
+            "name":"forefinger",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":4
+         },
+         {
+            "id":"238000005192",
+            "name":"partition",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":4
+         },
+         {
+            "id":"208000006820",
+            "name":"Arthralgia",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":3
+         },
+         {
+            "id":"238000002674",
+            "name":"endoscopic surgery",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":3
+         },
+         {
+            "id":"238000007674",
+            "name":"radiofrequency ablation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":3
+         },
+         {
+            "id":"230000001052",
+            "name":"transient effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":3
+         },
+         {
+            "id":"230000007704",
+            "name":"transition",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":3
+         },
+         {
+            "id":"208000008035",
+            "name":"Back Pain",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"238000002679",
+            "name":"ablation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"230000002567",
+            "name":"autonomic effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"210000004556",
+            "name":"brain",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"210000003811",
+            "name":"finger",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"208000014674",
+            "name":"injury",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"238000003780",
+            "name":"insertion",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"230000037431",
+            "name":"insertion",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"230000000284",
+            "name":"resting effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"230000001953",
+            "name":"sensory effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"238000002560",
+            "name":"therapeutic procedure",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":2
+         },
+         {
+            "id":"208000000094",
+            "name":"Chronic Pain",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"206010061218",
+            "name":"Inflammation",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"241001465754",
+            "name":"Metazoa",
+            "domain":"Species",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"FAPWRFPIFSIZLT-UHFFFAOYSA-M",
+            "name":"Sodium chloride",
+            "domain":"Chemical compound",
+            "smiles":"[Na+].[Cl-]",
+            "inchi_key":"FAPWRFPIFSIZLT-UHFFFAOYSA-M",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"241000251539",
+            "name":"Vertebrata <Metazoa>",
+            "domain":"Species",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"208000027418",
+            "name":"Wounds and injury",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000003484",
+            "name":"anatomy",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000002917",
+            "name":"arthritic effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000000712",
+            "name":"assembly",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000000429",
+            "name":"assembly",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000005540",
+            "name":"biological transmission",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000015556",
+            "name":"catabolic process",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000015271",
+            "name":"coagulation",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000005345",
+            "name":"coagulation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000006378",
+            "name":"damage",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000006731",
+            "name":"degradation reaction",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"229920001971",
+            "name":"elastomer",
+            "domain":"Polymers",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"239000000806",
+            "name":"elastomer",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000011846",
+            "name":"endoscopic investigation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"239000000835",
+            "name":"fiber",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000010438",
+            "name":"heat treatment",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000005286",
+            "name":"illumination",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000004054",
+            "name":"inflammatory process",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000007689",
+            "name":"inspection",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000001788",
+            "name":"irregular",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000002955",
+            "name":"isolation",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000001503",
+            "name":"joint",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000003127",
+            "name":"knee",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000004705",
+            "name":"lumbosacral region",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000004519",
+            "name":"manufacturing process",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"239000000463",
+            "name":"material",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"201000009240",
+            "name":"nasopharyngitis",
+            "domain":"Diseases",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000000929",
+            "name":"nociceptor",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000003287",
+            "name":"optical effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"229920001084",
+            "name":"poly(chloroprene)",
+            "domain":"Polymers",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000004044",
+            "name":"response",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000007790",
+            "name":"scraping",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"210000004872",
+            "name":"soft tissue",
+            "domain":"Anatomy",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"239000000126",
+            "name":"substance",
+            "domain":"Substances",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000001225",
+            "name":"therapeutic effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000008733",
+            "name":"trauma",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000011282",
+            "name":"treatment",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"238000011269",
+            "name":"treatment regimen",
+            "domain":"Methods",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"230000001755",
+            "name":"vocal effect",
+            "domain":"Effects",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         },
+         {
+            "id":"XLYOFNOQVPJJNP-UHFFFAOYSA-N",
+            "name":"water",
+            "domain":"Substances",
+            "smiles":"O",
+            "inchi_key":"XLYOFNOQVPJJNP-UHFFFAOYSA-N",
+            "similarity":0.0,
+            "sections":[
+               "description"
+            ],
+            "count":1
+         }
+      ]
+   }
+}
+
+"1. A method of stabilizing an endoscopic assembly on an internal anatomical surface during surgery, comprising:\n
+providing a tubular sheath having an axis and a distal end, the distal end including a first surface defining an aperture and a second surface defining a docking land, the first and second surfaces each inclined relative to the axis at respective angles in the range of about 45 to 75 degrees;
+\ninserting the distal end of the sheath into a patient;
+\ninserting an endoscope into the sheath and disposing an endoscope camera proximate the aperture;
+\ndisplaying a signal received from the camera on a screen; and
+\nusing the displayed signal to maneuver the docking land onto the anatomical surface.",
+
+providing a tubular sheath having an axis and a distal end, the distal end including a first surface defining an aperture and a second surface defining a docking land, the first and second surfaces each inclined relative to the axis at respective angles in the range of about 45 to 75 degrees;
+inserting the distal end of the sheath into a patient;
+inserting an endoscope into the sheath and disposing an endoscope camera proximate the aperture;
+displaying a signal received from the camera on a screen; and
+using the displayed signal to maneuver the docking land onto the anatomical surface.
