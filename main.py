@@ -115,15 +115,15 @@ def get_link(entry):
     links = get_links(entry)
     if len(links) > 0:
         return links[0]
-    return None
+    return ""
 
 def get_classification(line):
     classification = clean(remove_numbering(outside(line)))
     if classification.lower() == "yes":
-        return "Y"
+        return 2
     elif classification.lower() == "no":
-        return "N"
-    return "U" # unknown / unsure
+        return 0
+    return 1 # unknown / unsure
 
 class API:
     def __init__(self, test_keys=True):
@@ -219,11 +219,26 @@ def is_major(claim: str) -> bool:
     return match is None # should be true if it's a major claim
 
 def split_claim(claim) -> list:
-    header = claim.split("\n")[0]
+    header = remove_numbering(claim.split("\n")[0])
     components = claim.split("\n")[1:]
     return header, components
 
+def is_valid_link(link) -> bool:
+    if link != "":
+        try:
+            page = requests.get(link, timeout=5)
+        except:
+            page = requests.Response()
+            page.status_code = 404
+        if page.status_code == 200:
+            return True
+    return False
 
+CLASSIFICATION_EMOJIS = {
+    0: "❌",
+    1: "❓",
+    2: "✅",
+}
 chat = ChatGPT(model="deepseek-chat")
 def patentate(patent_id):
     SERPAPI = SerpApi()
@@ -233,87 +248,105 @@ def patentate(patent_id):
     claims = gwd(data, ['claims'])
     similar_documents = gwd(data, ['similar_documents'])
     # list of claim results, each claim has results and each result has name, description, link.
-    claim_data = [[] for _ in range(len(claims))] # list of list of dictionaries with name, description, link {"name": "", "description": "", "link": ""}
-    for claim_i, claim in enumerate(claims):
-        if not is_major(claim):
-            # skip
-            continue
-        # Get all components of the claim via newlines, after the header of the claim.
-        header, components = split_claim(claim)
-        print(claim_i+1, header)
-        for j, component in enumerate(components):
-            print(f"\t", j+1, component)
-        # component_list = "\n".join([f"* {component}" for component in components])
-        component_list = "\n".join([f"* {claim_i+1}.{j+1} {component}" for j,component in enumerate(components)])
-
-        # if claim_i in [0, 13, 19]:
-
-        prompt = f"""I am a patent lawyer trying to find applications that may be infringing or could use our patent # {patent_id}. This could include companies, institutes, or other groups of professionals. I need you to provide the top 10 companies or application descriptions that follow this outline. Output ONLY an enumerated list of matches, with 3 lines each - Name, Description, and Link. Example:\n"1. Name: Google Patents\nDescription: A patent resource for viewing and understanding patents and plenty of details regarding them.\nLink: https://www.patents.google.com".\n\n{claim}"""
-        prompt = f"""I am a patent lawyer trying to find products or applications that may be infringing or could use our patent #{patent_id}. This could be produced or distributed by companies, institutes, or other groups of professionals. I need you to provide the top 10 products or applications that match the claim, and an enumeration of each component in the claim to indicate if the match has those components, in a format that follows this outline. Output ONLY an enumerated list of matches, with each entry having the name and a bulleted list of the components it matches. Make sure to include the link! Example:
-"1. Name: Google Patents - https://www.patents.google.com
-* Component 1, an online database: Yes
-* Component 2, a search interface: Yes
-* Component 3, A online discussion forum: Unsure
-* Component 4, a sentiment analysis system: No"
-
-Do this for the following claim + Components:
-{header}
-{component_list}"""
-        prompt = f"""I am a patent lawyer trying to find products or applications that may be infringing or could use our patent #{patent_id}. This could be produced or distributed by companies, institutes, or other groups of professionals. I need you to provide the top 10 products or applications that match the claim, and an enumeration of each component in the claim to indicate if the match has those components, in a format that follows this outline. Output ONLY an enumerated list of matches, with each entry having the name and a bulleted list of the components it matches. Make sure to include the link! Example:
-"1. Google Patents - https://www.patents.google.com
-* 1.1. Yes
-* 1.2. Yes
-* 1.3. Unsure
-* 1.4. No"
-
-Do this for the following claim + Components:
-{header}
-{component_list}"""
-        res = chat.ask(prompt)
-        for entry in res.split("\n\n"):
-            lines = entry.split("\n")
-            if len(lines) < len(components):  # should be at least the length + 1 so this is forgiving
-                continue
-
-            name = get_name(lines[0])
-            print("NAME:", name)
-            link = get_link(entry)
-            print("LINK:", link)
-            for line in lines[1:]:
-                print("\tCLASS:", get_classification(line))
-#         # TODO ADD ERROR REDUNDANCY HERE
+    claim_data = [[] for _ in range(len(claims))] # list of list of dictionaries with name, description, link {"name": "", "link": "", "classifications": ""}
+#     # TODO make this parallel otherwise the AI takes too long
+#     for claim_i, claim in enumerate(claims):
+#         if not is_major(claim):
+#             # skip
+#             continue
+#         # Get all components of the claim via newlines, after the header of the claim.
+#         header, components = split_claim(claim)
+#         print(claim_i+1, header)
+#         for j, component in enumerate(components):
+#             print(f"\t", j+1, component)
+#         # component_list = "\n".join([f"* {component}" for component in components])
+#         component_list = "\n".join([f"* {claim_i+1}.{j+1} {component}" for j,component in enumerate(components)])
+#
+#         prompt = f"""I am a patent lawyer trying to find products or applications that may be infringing or could use our patent #{patent_id}. This could be produced or distributed by companies, institutes, or other groups of professionals. I need you to provide the top 10 products or applications that match the claim, and an enumeration of each component in the claim to indicate if the match has those components, in a format that follows this outline. Output ONLY an enumerated list of matches, with each entry having the name and a bulleted list of the components it matches. Make sure to include the link! Example:
+# "1. Google Patents - https://www.patents.google.com
+# * 1.1. Yes
+# * 1.2. Yes
+# * 1.3. Unsure
+# * 1.4. No"
+#
+# Do this for the following claim + Components:
+# {header}
+# {component_list}"""
+#         res = chat.ask(prompt)
 #         for entry in res.split("\n\n"):
-#             name, desc, link = entry.split("\n")
-#             name = name.split(": ", 1)[1].strip()
-#             desc = desc.split(": ", 1)[1].strip()
-#             link = link.split(": ", 1)[1].strip()
-#             try:
-#                 page = requests.get(link, timeout=5)
-#             except:
-#                 page = requests.Response()
-#                 page.status_code = 404
-#             if page.status_code == 200:
-#                 claim_data[claim_i].append({"name": name, "description": desc, "link": link})
-#                 print(f"Claim {claim_i + 1} - {name} - {link}")
+#             lines = entry.split("\n")
+#             if len(lines) < len(components):  # should be at least the length + 1 so this is forgiving
+#                 continue
 #
-#     # For each link + name and the claims it appears in
-#     matches = {}
-#     meta = {}
-#     for claim_i, claim in enumerate(claim_data):
-#         for entry in claim:
-#             if entry["link"] not in matches:
-#                 matches[entry["link"]] = []
-#
-#             if entry["link"] not in meta:
-#                 meta[entry["link"]] = entry
-#
-#             matches[entry["link"]].append(claim_i+1)
-#
-#     for link, claim_indices in sorted(matches.items(), key=lambda x: len(x[1]), reverse=True):
-#         print(f"Link: {link}, Claims: {claim_indices}, Name: {meta[link]['name']}, Description: {meta[link]['description']}")
-#         # for claim_i in claim_indices:
-#         #     print(f"Claim {claim_i + 1}: {claims[claim_i]}")
-#         # print("\n")
+#             name = get_name(lines[0])
+#             # print("NAME:", name)
+#             link = get_link(entry)
+#             # print("LINK:", link)
+#             classifications = [get_classification(line) for line in lines[1:]]
+#             # TODO handle when the classifications list is not as long or not matching the length of the components list
+#             # Check if the entry's link exists
+#             if is_valid_link(link):
+#                 # Add the data
+#                 claim_data[claim_i].append({"name": name, "link": link, "classifications": classifications})
+#                 print(f"Claim {claim_i + 1} - {name} - {link} -> {classifications}")
+    # For each link + name and the claims it appears in
+    # claim_data = [[{'name': 'Medtronic StealthStation S8 Surgical Navigation System #2', 'link': 'https://www.medtronic.com', 'classifications': [1, 2, 2, 2, 2]}, {'name': 'Medtronic StealthStation S8 Surgical Navigation System', 'link': 'https://www.medtronic.com', 'classifications': [1, 2, 2, 2, 2]}, {'name': 'Stryker Endoscopy HD Camera System', 'link': 'https://www.stryker.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Karl Storz Endoscopy System', 'link': 'https://www.karlstorz.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Boston Scientific SpyGlass DS Direct Visualization System', 'link': 'https://www.bostonscientific.com', 'classifications': [2, 2, 2, 2, -2]}, {'name': 'Olympus VISERA ELITE II Surgical Imaging System', 'link': 'https://www.olympus-global.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Intuitive Surgical da Vinci Xi Endoscope', 'link': 'https://www.intuitive.com', 'classifications': [-2, 2, 2, 2, -2]}, {'name': 'Richard Wolf Endoscopy System', 'link': 'https://www.richard-wolf.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Fujifilm ELUXEO Endoscopy System', 'link': 'https://www.fujifilm.com', 'classifications': [1, 2, 2, 2, -2]}, {'name': 'CONMED Visualization Systems', 'link': 'https://www.conmed.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Smith Nephew Endoscopy Systems', 'link': 'https://www.smith-nephew.com', 'classifications': [1, 2, 2, 2, -2]}], [], [], [], [], [], [], [], [], [], [], [], [], [{'name': 'Karl Storz Endoscopic DVR System', 'link': 'https://www.karlstorz.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'Medtronic METRx System', 'link': 'https://www.medtronic.com', 'classifications': [2, 2, 2, 1, 2]}, {'name': 'Stryker Visuray Endoscopic System', 'link': 'https://www.stryker.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'Joimax TESSYS Endoscopic System', 'link': 'https://www.joimax.com', 'classifications': [1, 2, 2, 2, 2]}, {'name': 'Richard Wolf Endoscopic Spine System', 'link': 'https://www.richard-wolf.com', 'classifications': [2, 2, 2, 1, 2]}, {'name': 'Zimmer Biomet Spine Endoscopy', 'link': 'https://www.zimmerbiomet.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'Olympus EndoTherapy Systems', 'link': 'https://www.olympusamerica.com', 'classifications': [2, 2, 2, 1, 2]}, {'name': 'Aesculap MiRus Endoscopic System', 'link': 'https://www.aesculap.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'Nuvasive Pulse Endoscopy', 'link': 'https://www.nuvasive.com', 'classifications': [1, 2, 2, 2, 2]}], [], [], [], [], [], [{'name': 'Medtronic METRx System', 'link': 'https://www.medtronic.com', 'classifications': [2, 2, 1, 2, 1]}, {'name': 'Stryker Endoscopy Visualization System', 'link': 'https://www.stryker.com', 'classifications': [2, 2, -2, 2, -2]}, {'name': 'NuVasive MAS TLIF System', 'link': 'https://www.nuvasive.com', 'classifications': [2, 2, 1, 2, -2]}, {'name': 'Karl Storz Endoscopy Systems', 'link': 'https://www.karlstorz.com', 'classifications': [2, 2, 1, 2, 1]}, {'name': 'Boston Scientific SpyGlass DS', 'link': 'https://www.bostonscientific.com', 'classifications': [2, 2, -2, 2, -2]}, {'name': 'Richard Wolf Endoscopic Sheaths', 'link': 'https://www.richard-wolf.com', 'classifications': [2, 2, 1, 2, 1]}, {'name': 'Olympus Surgical Endoscopy', 'link': 'https://www.olympus-global.com', 'classifications': [2, 2, -2, 2, -2]}, {'name': 'Zimmer Biomet MIS Spine System', 'link': 'https://www.zimmerbiomet.com', 'classifications': [2, 2, 1, 2, -2]}]]
+    claim_data = [[{'name': 'Medtronic StealthStation S8 Surgical Navigation System', 'link': 'https://www.medtronic.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Stryker 1688 Advanced Imaging Modality System', 'link': 'https://www.stryker.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Karl Storz Endoscopy System', 'link': 'https://www.karlstorz.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'Boston Scientific SpyGlass DS Direct Visualization System', 'link': 'https://www.bostonscientific.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Olympus EVIS EXERA III Endoscopy System', 'link': 'https://www.olympusamerica.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Intuitive Surgical da Vinci SP Endoscope', 'link': 'https://www.intuitive.com', 'classifications': [2, 2, 2, 2, 2]}, {'name': 'CONMED EndoSurg Endoscopic System', 'link': 'https://www.conmed.com', 'classifications': [1, 2, 2, 2, 1]}, {'name': 'Richard Wolf Endoscopy System', 'link': 'https://www.richard-wolf.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Fujifilm ELUXEO Endoscopy System', 'link': 'https://www.fujifilm.com', 'classifications': [1, 2, 2, 2, 0]}, {'name': 'Cook Medical Endoscopic Access Devices', 'link': 'https://www.cookmedical.com', 'classifications': [2, 2, 2, 1, 1]}], [], [], [], [], [], [], [], [], [], [], [], [], [{'name': 'Joimax TESSYS Endoscopic System', 'link': 'https://www.joimax.com/tessys', 'classifications': [1, 2, 2, 0, 0]}, {'name': 'NuVasive s LessRay System', 'link': 'https://www.nuvasive.com/lessray', 'classifications': [0, 2, 0, 0, 0]}, {'name': 'Karl Storz Endoscopic Spine System', 'link': 'https://www.karlstorz.com/spine', 'classifications': [2, 2, 2, 1, 1]}], [], [], [], [], [], [{'name': 'Medtronic METRx System', 'link': 'https://www.medtronic.com', 'classifications': [2, 2, 1, 2, 0]}, {'name': 'Stryker Endoscopy Visualization System', 'link': 'https://www.stryker.com', 'classifications': [2, 2, 1, 2, 0]}, {'name': 'Boston Scientific SpyGlass DS', 'link': 'https://www.bostonscientific.com', 'classifications': [2, 2, 0, 2, 0]}, {'name': 'Olympus EndoTherapy Devices', 'link': 'https://www.olympusamerica.com', 'classifications': [2, 2, 0, 2, 0]}, {'name': 'Karl Storz Endoscopy Systems', 'link': 'https://www.karlstorz.com', 'classifications': [2, 2, 1, 2, 0]}, {'name': 'NuVasive MAS TLIF System', 'link': 'https://www.nuvasive.com', 'classifications': [2, 2, 2, 2, 1]}, {'name': 'Richard Wolf Endoscopes', 'link': 'https://www.richard-wolf.com', 'classifications': [2, 2, 0, 2, 0]}, {'name': 'Zimmer Biomet Spine Devices', 'link': 'https://www.zimmerbiomet.com', 'classifications': [2, 2, 2, 2, 1]}]]
+    matches = {}
+    scores = {}
+    # meta = {}
+    for claim_i, claim in enumerate(claim_data):
+        for entry in claim:
+            if entry["link"] not in matches:
+                matches[entry["link"]] = {}
+            if claim_i+1 not in matches[entry["link"]]:
+                matches[entry["link"]][claim_i+1] = {}
+
+            # There could be multiple products by one company that match a claim, so we have another dict here
+            matches[entry["link"]][claim_i+1][entry["name"]] = entry["classifications"]
+
+            # if entry["link"] not in meta:
+            #     meta[entry["link"]] = entry
+
+            # matches[entry["link"]].append(claim_i+1)
+
+    # for match in
+    for link, claim_indices in matches.items():
+        # matches[link]["score"] = 0
+        scores[link] = 0
+        # Score is total number generated by adding all it's classifications together.
+        # TODO SHOULD UNKNOWN BE 0.5 INSTEAD OF 0 AND NEGATIVE BE 0 INSTEAD OF -1 ???
+        for claim_i, products in claim_indices.items():
+            for product_name, product_classifications in products.items():
+                # matches[link]["score"] += sum(product_classifications)
+                score = sum(product_classifications)
+                if score == len(product_classifications)*2:
+                    # Complete match, add a bonus amplifier to boost this score
+                    score += 100
+                scores[link] += score
+
+    # Now iterate by score and make our big result list
+    i = 1
+    for link, claim_indices in sorted(matches.items(), key=lambda x: scores[x[0]], reverse=True):
+        # print(f"Link: {link}, Claims: {claim_indices}, Name: {meta[link]['name']}, Description: {meta[link]['description']}")
+        print(f"{i}. {link}, Score {scores[link]}")
+        for claim_i, products in claim_indices.items():
+            header,components = split_claim(claims[claim_i-1])
+            print(f"\tClaim {claim_i}: \"{header}\"")
+            for product_name, product_classifications in products.items():
+                print(f"\t\tProduct: {product_name}")
+                print(f"\t\tSub-Claim Matches:")
+                for component_i, classification in enumerate(product_classifications):
+                    s = components[component_i][:100]
+                    if len(components[component_i]) > 100:
+                        s = components[component_i][:100].strip() + "..."
+                    print(f"\t\t\t{CLASSIFICATION_EMOJIS[classification]} \"{s}\"")
+
+        # for claim_i in claim_indices:
+        #     print(f"Claim {claim_i + 1}: {claims[claim_i]}")
+        # print("\n")
+        print()
+        i += 1
 #
 # print(data)
 # TEST_PATENT_ID = "US9687142B1"
@@ -342,5 +375,19 @@ For each claim - url of PRODUCT
         are they present in the product?
 
 post-process check if URL is real
+
+output format for the finale
+
+# for each claim:
+# print the claim, sort results by most positive matches (just sum the classifications b/c numbering system)
+# 
+# CLAIM 1 - SOMETHING IMPORTANT
+#     1: Richard Wolf Endoscopy System (https://www.richard-wolf.com) - Sub Claim Results: 3/5 positive matches, 2/5 possible matches, 0/5 negative matches
+#     2: Intuitive Surgical da Vinci Xi Endoscope (https://www.intuitive.com) - 
+
+OUTPUT FORMAT AS CONFIRMED BY BRYCE
+print by company:
+    each one in collapsible section, ordered by highest total
+    for each section under the company, we do it similar to how we have it here (pog)
 
 """
