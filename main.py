@@ -220,24 +220,36 @@ def is_major(claim: str) -> bool:
     return match is None # should be true if it's a major claim
 
 
-"""
-TODO update it so that it will handle recursion properly for claims like this one
-We have it so that it's relatively simple:
-Parent: New sentence, until period, semicolon, or colon.
-    If period, end of tree.
-    If semicolon, next parent node in tree.
-    If colon, go to child in tree.
-"""
-def sub_claims(claim):
-    if ":" in claim:
-        parent,children = claim.split(":", 1)
-        for child in children.split(":",1)[0].split(";"):
-            for sub_claim in sub_claims(child):
-                yield parent + sub_claim
-    else:
-        yield claim
+def split_claim(claim) -> (str, list):
+    """
+    Split claim into it's header and subsequent components,
+        Returning each component with the headings before it kept as indicators of the sub-element it's part of.
+    Example:
 
-def stringify_claim(claim, prefix=""):
+    ```
+    3. A device capable of time travel comprising:
+        A controller capable of traversing to at least 30 years;
+        A flux capacitor capable of:
+            holding 1.21 gigawatts of power
+            being charged directly via:
+                overhead electrical discharge
+                using plutonium from the Libyans
+
+        A DeLorean automobile
+    ```
+
+    Would return:
+    Header: A device capable of time travel comprising:
+    Subclaims:
+        a controller capable of traversing to at least 30 years
+        a flux capacitor capable of holding 1.21 gigawatts of power
+        a flux capacitor capable of being charged directly via overhead electrical discharge
+        a flux capacitor capable of being charged directly via using plutonium from the Libyans
+        a DeLorean automobile
+
+    :param claim:
+    :return:
+    """
     subclaims = []
     preamble = claim.split(":",1)[0] # always included before each
     prefix = ""
@@ -249,57 +261,10 @@ def stringify_claim(claim, prefix=""):
         elif len(line) < 1:
             # Reset back to first level
             prefix = ""
-        # else:
-        #     elif ";" in line or "." in line:
         else:
             # subclaims.append(preamble + prefix + line)
-            subclaims.append(f"{preamble}: {prefix} {line}")
-    return subclaims
-
-    # if ":" in claim:
-    #     i = claim.index(":")
-    #     prefix = claim[:i]
-    #     j =
-    #     if ":" in claim[i:]:
-    #         j = claim[i:].index(":")
-    #     for subclaim in claim[i:]
-
-
-"""
-A:
-    b;
-    c;
-    d;
-    e:
-        f;
-        g;
-        h.
-        
-    i:
-    
-
-
-"""
-
-def split_claim(claim) -> list:
-    print(list(sub_claims(claim)))
-    subclaims = stringify_claim(claim, "")
-    elements = claim.split("\n")
-    header = remove_numbering(elements[0])
-    components = []
-    if len(elements) > 2:
-        # More sub-elements to split
-        # For each one put the previous heading as prefix
-        prefix = ""
-        for i in range(1, len(elements)-1):
-            if ";" not in elements[i]:
-                prefix = elements[i]
-                continue
-            # else ; in elements[i]
-            components.append(f"{prefix} {elements[i]}")
-    else:
-        components = elements[1].split(";")
-    return header, components
+            subclaims.append(f"{prefix} {line}")
+    return remove_numbering(preamble), subclaims
 
 def is_valid_link(link) -> bool:
     if link != "":
@@ -381,13 +346,13 @@ def patentate(patent_id):
         results[result_i] = func(*args)
 
     for claim_i, claim in enumerate(claims):
-        split_claim(claim)
         if not is_major(claim):
             # skip
             continue
         thread = threading.Thread(target=thread_caller, args=(claim_i, process_claim_t, *(claim_i, claim, chat,patent_id)))
         threads.append(thread)
         thread.start()
+        # process_claim_t(claim_i, claim, chat, patent_id)
 
     # Wait for all threads to complete
     for thread in threads:
