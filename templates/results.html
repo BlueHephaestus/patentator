@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patent Report Results</title>
+    <style>
+        .result-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .claim {
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .match-yes { color: green; }
+        .match-no { color: red; }
+        .match-unknown { color: orange; }
+    </style>
+</head>
+<body>
+    <h1>Patent Report Results</h1>
+    <a href="/">Analyze Another Patent</a>
+
+    {% for item in results %}
+    <div class="result-item">
+        <h2>{{ loop.index }}. <a href="{{ item.link }}" target="_blank">{{ item.name }}</a></h2>
+        <p>Score: {{ item.score }}</p>
+
+        {% for claim in item.claims %}
+        <div class="claim">
+            <h3>Claim {{ claim.number }}: "{{ claim.header }}"</h3>
+            <ul>
+                {% for component in claim.components %}
+                <li class="match-{{ component.classification }}">
+                    {{ component.emoji }} {{ component.text }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+</html>

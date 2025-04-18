@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patent Report Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .progress-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patent Report Generator</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" action="/">
+        <input type="text" name="patent_id" placeholder="Enter Patent ID" required>
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <div id="task-status" style="display: none;">
+        <h2>Processing Patent: <span id="patent-id"></span></h2>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar">0%</div>
+        </div>
+        <p id="status-message">Starting...</p>
+        <div id="results-container"></div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(html => {
+                // Handle redirect to task status page
+                const taskId = new DOMParser().parseFromString(html, 'text/html')
+                    .querySelector('a').href.split('/').pop();
+                monitorTask(taskId);
+            });
+        });
+
+        function monitorTask(taskId) {
+            document.getElementById('task-status').style.display = 'block';
+            document.getElementById('patent-id').textContent =
+                document.querySelector('input[name="patent_id"]').value;
+
+            const progressBar = document.getElementById('progress-bar');
+            const statusMessage = document.getElementById('status-message');
+
+            const checkStatus = () => {
+                fetch(`/status/${taskId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const progress = Math.round(data.progress);
+                        progressBar.style.width = `${progress}%`;
+                        progressBar.textContent = `${progress}%`;
+                        statusMessage.textContent = data.status || `Processing... ${progress}%`;
+
+                        if (data.state === 'SUCCESS') {
+                            window.location.href = `/results/${taskId}`;
+                        } else if (data.state === 'FAILURE') {
+                            statusMessage.textContent = `Error: ${data.status}`;
+                            progressBar.style.backgroundColor = 'red';
+                        } else {
+                            setTimeout(checkStatus, 1000);
+                        }
+                    });
+            };
+
+            checkStatus();
+        }
+    </script>
+</body>
+</html>

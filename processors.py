@@ -118,6 +118,9 @@ def get_link(entry):
         return links[0]
     return ""
 
+def has_link(line):
+    return get_link(line) != ""
+
 def get_classification(line):
     classification = clean(remove_numbering(outside(line)))
     if classification.lower() == "yes":
@@ -162,7 +165,7 @@ class SerpApi(API):
             # Test API keys to make sure they still work and remove if any dont before we do anything
             n = len(self.keys) # will change during loop
             to_rm = []
-            params = self.base_params
+            params = self.base_params.copy()
             params["patent_id"] = params["patent_id"].format(TEST_PATENT_ID)
 
             for i, key in enumerate(self.keys):
@@ -190,7 +193,7 @@ class SerpApi(API):
 
     def request(self, patent_id):
         try:
-            params = self.base_params
+            params = self.base_params.copy()
             params["patent_id"] = params["patent_id"].format(patent_id)
             retries = 5
             while retries > 0:
@@ -254,16 +257,21 @@ def split_claim(claim) -> (str, list):
     preamble = claim.split(":",1)[0] # always included before each
     prefix = ""
     claim = claim.split(":", 1)[-1]
-    for line in claim.split("\n"):
-        if ":" in line:
-            # New subclaim
-            prefix += line
-        elif len(line) < 1:
-            # Reset back to first level
-            prefix = ""
-        else:
-            # subclaims.append(preamble + prefix + line)
-            subclaims.append(f"{prefix} {line}")
+    for _line in claim.split("\n"):
+        if len(_line) < 1:
+            prefix = "" # reset on empty lines
+            continue
+        for line in _line.split(";"):
+            if len(line) < 5: continue # skip if the line ended with this
+            if ":" in line:
+                # New subclaim
+                prefix += line
+                # elif len(line) < 5:
+                #     # Reset back to first level
+                #     prefix = ""
+            else:
+                # subclaims.append(preamble + prefix + line)
+                subclaims.append(f"{prefix} {line}")
     return remove_numbering(preamble), subclaims
 
 def is_valid_link(link) -> bool:
@@ -314,6 +322,12 @@ Do this for the following claim + Components:
         # print("NAME:", name)
         link = get_link(entry)
         # print("LINK:", link)
+        if link == '' or len(lines) < 2:
+            continue
+        # In case it puts the link in the line after the title
+        if has_link(lines[1]) and not has_link(lines[0]):
+            lines[0] += lines[1]
+            lines.pop(1)
         classifications = [get_classification(line) for line in lines[1:]]
         # TODO handle when the classifications list is not as long or not matching the length of the components list
         # Check if the entry's link exists
@@ -329,9 +343,20 @@ Do this for the following claim + Components:
 
 
 chat = ChatGPT(model="deepseek-chat")
-def patentate(patent_id):
+def patentate(patent_id, progress_callback=None):
+    def update_progress(current, total, status=""):
+        if progress_callback:
+            progress_callback(state='PROGRESS', meta={
+                'current': current,
+                'total': total,
+                'status': status
+            })
+    update_progress(0, 100, "Starting patent analysis...")
+
     SERPAPI = SerpApi()
-    data = SERPAPI.request(TEST_PATENT_ID)
+    update_progress(5, 100, "Fetching patent data...")
+
+    data = SERPAPI.request(patent_id)
     title = gwd(data, ['title'])
     pubdate = gwd(data, ['publication_date'])
     claims = gwd(data, ['claims'])
@@ -340,6 +365,7 @@ def patentate(patent_id):
     claim_data = [[] for _ in range(len(claims))] # list of list of dictionaries with name, description, link {"name": "", "link": "", "classifications": ""}
     threads = []
     results = [None] * len(claims) # list of results for each claim
+    update_progress(10, 100, "Querying AI Model for Similar Products...")
     # TODO generalize this
     def thread_caller(result_i, func, *args):
         # Call the function with the provided arguments in a thread and put it's return value in results array
@@ -367,6 +393,7 @@ def patentate(patent_id):
         # claim_data[claim_i] = process_claim_t(claim_i, claim)
 
 
+    update_progress(80, 100, "Collating Product and Claim Data...")
     matches = {}
     scores = {}
     # meta = {}
@@ -381,6 +408,7 @@ def patentate(patent_id):
             matches[entry["link"]][claim_i + 1][entry["name"]] = entry["classifications"]
 
     # for match in
+    update_progress(90, 100, "Scoring and Sorting Results...")
     for link, claim_indices in matches.items():
         # matches[link]["score"] = 0
         scores[link] = 0
@@ -417,12 +445,15 @@ def patentate(patent_id):
         # print("\n")
         print()
         i += 1
+    update_progress(100, 100, "Analysis Complete!")
 #
 # print(data)
 # TEST_PATENT_ID = "US20230027590A1"
 TEST_PATENT_ID = "US10729277B2"
-# TEST_PATENT_ID = "US9687142B1"
-patentate(TEST_PATENT_ID)
+# # TEST_PATENT_ID = "US9687142B1"
+patentate("US20230027590A1")
+patentate("US10729277B2")
+patentate("US9687142B1")
 # "6328b60d23198d8e3ef25bad85cc2760b9b3fa4de8a83bdb0bfc0fc124714dcd"
 # params = {
 #     "engine": "google_patents_details",
