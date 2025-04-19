@@ -344,17 +344,10 @@ Do this for the following claim + Components:
 
 chat = ChatGPT(model="deepseek-chat")
 def patentate(patent_id, progress_callback=None):
-    def update_progress(current, total, status=""):
-        if progress_callback:
-            progress_callback(state='PROGRESS', meta={
-                'current': current,
-                'total': total,
-                'status': status
-            })
-    update_progress(0, 100, "Starting patent analysis...")
+    progress_callback(0, "Starting patent analysis...")
 
     SERPAPI = SerpApi()
-    update_progress(5, 100, "Fetching patent data...")
+    progress_callback(5, "Fetching patent data...")
 
     data = SERPAPI.request(patent_id)
     title = gwd(data, ['title'])
@@ -365,19 +358,35 @@ def patentate(patent_id, progress_callback=None):
     claim_data = [[] for _ in range(len(claims))] # list of list of dictionaries with name, description, link {"name": "", "link": "", "classifications": ""}
     threads = []
     results = [None] * len(claims) # list of results for each claim
-    update_progress(10, 100, "Querying AI Model for Similar Products...")
+    progress_callback(10, "Querying AI Model for Similar Products...")
+    return {'https://www.mybirdbuddy.com': {1: {'Bird Buddy - Smart Bird Feeder': [2, 2, 1, 0]}, 8: {'Bird Buddy Smart Bird Feeder https www.mybirdbuddy.com': [2]}}, 'https://ring.com': {1: {'Ring Always Home Cam': [2, 1, 0, 0]}}, 'https://www.mi.com': {1: {'Xiaomi Mi Bird Feeder Camera': [2, 2, 0, 0]}}, 'https://www.petsafe.net': {1: {'Petsafe Smart Feed': [0, 0, 1, 2]}}}
     # TODO generalize this
+    claims_to_process = 0
+    claims_processed = 0
     def thread_caller(result_i, func, *args):
         # Call the function with the provided arguments in a thread and put it's return value in results array
         results[result_i] = func(*args)
+        # import time, random
+        # time.sleep(random.randint(0,3))
+        # print("DONE HERE")
+        # with threading.Lock():  # Thread-safe progress update
+        #     nonlocal claims_processed
+        #     claims_processed += 1
+        #     progress_callback(
+        #         10 + int(80 * claims_processed / claims_to_process),
+        #         f"Processed {claims_processed}/{claims_to_process} claims"
+        #     )
+    progress_callback(10, "Querying AI Model for Similar Products...")
+
 
     for claim_i, claim in enumerate(claims):
-        if not is_major(claim):
-            # skip
-            continue
+        # if not is_major(claim):
+        #     # skip
+        #     continue
         thread = threading.Thread(target=thread_caller, args=(claim_i, process_claim_t, *(claim_i, claim, chat,patent_id)))
         threads.append(thread)
         thread.start()
+        claims_to_process += 1
         # process_claim_t(claim_i, claim, chat, patent_id)
 
     # Wait for all threads to complete
@@ -393,7 +402,7 @@ def patentate(patent_id, progress_callback=None):
         # claim_data[claim_i] = process_claim_t(claim_i, claim)
 
 
-    update_progress(80, 100, "Collating Product and Claim Data...")
+    progress_callback(80, "Collating Product and Claim Data...")
     matches = {}
     scores = {}
     # meta = {}
@@ -408,7 +417,7 @@ def patentate(patent_id, progress_callback=None):
             matches[entry["link"]][claim_i + 1][entry["name"]] = entry["classifications"]
 
     # for match in
-    update_progress(90, 100, "Scoring and Sorting Results...")
+    progress_callback(90, "Scoring and Sorting Results...")
     for link, claim_indices in matches.items():
         # matches[link]["score"] = 0
         scores[link] = 0
@@ -445,15 +454,17 @@ def patentate(patent_id, progress_callback=None):
         # print("\n")
         print()
         i += 1
-    update_progress(100, 100, "Analysis Complete!")
+    progress_callback(100, "Analysis Complete!")
+    return matches
+
 #
 # print(data)
 # TEST_PATENT_ID = "US20230027590A1"
-TEST_PATENT_ID = "US10729277B2"
-# # TEST_PATENT_ID = "US9687142B1"
-patentate("US20230027590A1")
-patentate("US10729277B2")
-patentate("US9687142B1")
+# TEST_PATENT_ID = "US10729277B2"
+# # # TEST_PATENT_ID = "US9687142B1"
+# patentate("US20230027590A1")
+# patentate("US10729277B2")
+# patentate("US9687142B1")
 # "6328b60d23198d8e3ef25bad85cc2760b9b3fa4de8a83bdb0bfc0fc124714dcd"
 # params = {
 #     "engine": "google_patents_details",

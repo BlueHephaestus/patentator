@@ -2,22 +2,6 @@
 <html>
 <head>
     <title>Patent Report Generator</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        .progress-container {
-            width: 100%;
-            background-color: #f1f1f1;
-            margin: 20px 0;
-        }
-        .progress-bar {
-            height: 30px;
-            background-color: #4CAF50;
-            text-align: center;
-            line-height: 30px;
-            color: white;
-            width: 0%;
-        }
-    </style>
 </head>
 <body>
     <h1>Patent Report Generator</h1>
@@ -26,63 +10,74 @@
         <p style="color: red;">{{ error }}</p>
     {% endif %}
 
-    <form method="POST" action="/">
+    <form id="patent-form" method="POST" action="/">
         <input type="text" name="patent_id" placeholder="Enter Patent ID" required>
         <button type="submit">Generate Report</button>
     </form>
 
-    <div id="task-status" style="display: none;">
-        <h2>Processing Patent: <span id="patent-id"></span></h2>
-        <div class="progress-container">
-            <div id="progress-bar" class="progress-bar">0%</div>
+    <div id="task-status" style="display: none; margin-top: 20px;">
+        <h2>Processing Patent...</h2>
+        <div id="progress-container" style="width: 100%; background-color: #f1f1f1;">
+            <div id="progress-bar" style="height: 30px; background-color: #4CAF50; width: 0%; text-align: center; line-height: 30px; color: white;">0%</div>
         </div>
-        <p id="status-message">Starting...</p>
-        <div id="results-container"></div>
+        <p id="status-message">Starting analysis...</p>
     </div>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        document.getElementById('patent-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
 
             fetch('/', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
             })
-            .then(response => response.text())
-            .then(html => {
-                // Handle redirect to task status page
-                const taskId = new DOMParser().parseFromString(html, 'text/html')
-                    .querySelector('a').href.split('/').pop();
-                monitorTask(taskId);
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('task-status').style.display = 'block';
+                monitorTask(data.task_id);
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
         });
 
-        function monitorTask(taskId) {
-            document.getElementById('task-status').style.display = 'block';
-            document.getElementById('patent-id').textContent =
-                document.querySelector('input[name="patent_id"]').value;
 
+        function monitorTask(taskId) {
             const progressBar = document.getElementById('progress-bar');
             const statusMessage = document.getElementById('status-message');
+            // redirect to appropriate page depending on task status
 
             const checkStatus = () => {
                 fetch(`/status/${taskId}`)
                     .then(response => response.json())
                     .then(data => {
-                        const progress = Math.round(data.progress);
-                        progressBar.style.width = `${progress}%`;
-                        progressBar.textContent = `${progress}%`;
-                        statusMessage.textContent = data.status || `Processing... ${progress}%`;
-
                         if (data.state === 'SUCCESS') {
+                            progressBar.style.width = '100%';
+                            progressBar.textContent = '100%';
+                            statusMessage.textContent = 'Analysis complete! Redirecting...';
                             window.location.href = `/results/${taskId}`;
-                        } else if (data.state === 'FAILURE') {
-                            statusMessage.textContent = `Error: ${data.status}`;
+                        }
+                        else if (data.state === 'FAILURE') {
                             progressBar.style.backgroundColor = 'red';
-                        } else {
+                            statusMessage.textContent = `Error: ${data.error || 'Unknown error occurred'}`;
+                        }
+                        else if (data.state === 'PROGRESS') {
+                            progressBar.style.width = `${data.progress}%`;
+                            progressBar.textContent = `${Math.round(data.progress)}%`;
+                            statusMessage.textContent = data.status || `Processing... ${Math.round(data.progress)}%`;
                             setTimeout(checkStatus, 1000);
                         }
+                        else { // PENDING state
+                            setTimeout(checkStatus, 1000);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking status:', error);
+                        setTimeout(checkStatus, 2000); // Retry after delay
                     });
             };
 

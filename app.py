@@ -22,19 +22,53 @@ celery.conf.update(app.config)
 # In-memory storage for task results (replace with Redis in production)
 tasks = {}
 
+# @celery.task(bind=True)
+# def generate_patent_report_task(self, patent_id):
+#     """Celery task to generate patent report"""
+#     self.update_state(state='PROGRESS', meta={'current': 0, 'total': 100, 'status': 'Starting...'})
+#
+#     try:
+#         # Process the patent - modify your existing function to accept progress updates
+#         result = patentate(patent_id, progress_callback=self.update_state)
+#         return {'status': 'COMPLETED', 'result': result}
+#     except Exception as e:
+#
+#         return {'status': 'FAILED', 'error': traceback.format_exc()}
+
 
 @celery.task(bind=True)
 def generate_patent_report_task(self, patent_id):
     """Celery task to generate patent report"""
-    self.update_state(state='PROGRESS', meta={'current': 0, 'total': 100, 'status': 'Starting...'})
+
+    def update_progress(current, status=""):
+        self.update_state(
+            state='PROGRESS',
+            meta={
+                'current': current,
+                'total': 100,
+                'status': status
+            }
+        )
 
     try:
-        # Process the patent - modify your existing function to accept progress updates
-        result = patentate(patent_id, progress_callback=self.update_state)
-        return {'status': 'COMPLETED', 'result': result}
+        # Pass our update_progress function to patentate
+        result = patentate(patent_id, progress_callback=update_progress)
+
+        return {
+            'status': 'COMPLETED',
+            'result': result,
+            'current': 100,
+            'total': 100,
+            'status_message': 'Analysis complete!'
+        }
     except Exception as e:
-        
-        return {'status': 'FAILED', 'error': traceback.format_exc()}
+        return {
+            'status': 'FAILED',
+            'error': traceback.format_exc(),
+            'current': 100,
+            'total': 100
+        }
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -44,9 +78,16 @@ def index():
         if not patent_id:
             return render_template('index.html', error="Please enter a patent ID")
 
-        # Start Celery task
+        # result = patentate(patent_id, progress_callback=lambda x, y: None)
+        # return render_template("results.html", results=result)
+
+        # RE ENABLE WHEN CELERY
         task = generate_patent_report_task.apply_async(args=[patent_id])
+        print(task, task.id)
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({'task_id': task.id})
         return redirect(url_for('task_status', task_id=task.id))
+
 
     return render_template('index.html')
 
@@ -85,6 +126,7 @@ def task_status(task_id):
 
 @app.route('/results/<task_id>')
 def view_results(task_id):
+    # Get results for this task id and render
     task = generate_patent_report_task.AsyncResult(task_id)
 
     if task.state == 'SUCCESS':
